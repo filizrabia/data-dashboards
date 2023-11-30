@@ -66,7 +66,7 @@ def map(data, lat, lon, zoom):
     ))
 
 # LAYING OUT THE TOP SECTION OF THE APP
-t0,t1, t2, t3, t4 = st.beta_columns((1,8,1,12,1))
+t0,t1, t2, t3, t4 = st.columns((1,8,1,12,1))
 
 t1.title("NYC Ridesharing Data")
 
@@ -83,7 +83,7 @@ t3.write(
 data = data[data[DATE_TIME].dt.hour == hour_selected]
 
 # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
-c0, c1, c2, c3, c4, c5, c6 = st.beta_columns((1,8,1,4,4,4,1))
+c0, c1, c2, c3, c4, c5, c6 = st.columns((1,8,1,4,4,4,1))
 
 # SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
 la_guardia= [40.7900, -73.8700]
@@ -118,7 +118,7 @@ hist = np.histogram(filtered[DATE_TIME].dt.minute, bins=60, range=(0, 60))[0]
 chart_data = pd.DataFrame({"minute": range(60), "pickups": hist})
 
 # LAYING OUT THE HISTOGRAM SECTION
-z0, z1, z2 = st.beta_columns((1,21,1))
+z0, z1, z2 = st.columns((1,21,1))
 
 z1.write("")
 
